@@ -62,7 +62,7 @@ main = do
     hSetBuffering stdout LineBuffering
     env <- getEnvironment
     let port = maybe 8080 read $ lookup "PORT" env
-        home = maybe "Welcome to Haskell on Heroku" T.pack $
+        home = maybe "Test" T.pack $
                  lookup "TEST_HOME" env
     notes <- emptyNotes
     run port $ serve noteAPI $ server home notes
